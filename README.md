@@ -7,6 +7,7 @@ This is a backtesting engine meant to simulate and evaluate the performance of d
 
 
 ## Project Structure
+```text
 Backtester/
     ├── backtester
     │   ├── __init__.py
@@ -23,7 +24,7 @@ Backtester/
         ├── __init__.py
         ├── base.py
         └── movingavg.py
-
+```
 
 ## Installation
 
