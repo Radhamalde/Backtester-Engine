@@ -9,9 +9,9 @@ class Portfolio():
         # buy/sell as many as possible shares for now
         if signal == "BUY":
             shares_to_buy = self.cash//price # 2 slashes rounds down to nearest whole
-                self.cash -= shares_to_buy*price
-                self.shares += shares_to_buy
+            self.cash -= shares_to_buy*price
+            self.shares += shares_to_buy
         elif signal == "SELL":
-                self.cash += self.shares * price
-                self.shares = 0
+            self.cash += self.shares * price
+            self.shares = 0
 
