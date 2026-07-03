@@ -9,12 +9,12 @@ from strategies.movingavg import MovingAvg
 
 def main():
     # load data
-    data = load_data('AAPL', '2020-01-01', '2023-01-01') 
+    data = load_data('NVDA', '2023-01-01', '2025-12-01') 
     print(data.head())
     print(data.columns)
 
     # construct portfolio
-    portfolio = Portfolio(initial_cash=100000)
+    portfolio = Portfolio(initial_cash=1000)
 
     # construct strategy (also get necessary data columns)
     strategy = MovingAvg(short_window = 20, long_window = 50)
