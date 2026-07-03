@@ -1,7 +1,7 @@
 # Backtesting Engine
 
 ## Description
-This is a backtesting engine meant to simulate and evaluate the performance of different trading strategies on historical data.
+This is a backtesting engine meant to simulate and evaluate the performance of different trading strategies on historical data. It will track and output the metrics of each trade and total trades, including giving insight on win rate, average returns, and drawdowns.
 
 ## Features
 
