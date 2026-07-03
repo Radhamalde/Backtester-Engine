@@ -1,18 +1,25 @@
 # To execute the entire backtesting process, using the components inside backtester/.
-import backtester.engine as engine
-import backtester.metrics as metrics
-import backtester.broker as broker
-import backtester.portfolio as portfolio
-import backtester.data as data
-import backtester.plotting as plotting
-import strategies.movingavg as strategy
+from backtester.engine import Engine
+from backtester.metrics import Metrics
+from backtester.broker import Broker
+from backtester.portfolio import Portfolio
+from backtester.data import load_data
+from backtester.plotting import Plotting
+from strategies.movingavg import MovingAvg
 
 def main():
     # load data
-    data = data.load_data('AAPL', '2020-01-01', '2023-01-01') 
+    data = load_data('AAPL', '2020-01-01', '2023-01-01') 
 
-    # run engine
-    engine.run_backtest(data, strategy)
+    # construct portfolio
+    portfolio = Portfolio(initial_cash=100000)
+
+    # construct strategy (also get necessary data columns)
+    strategy = MovingAvg()
+
+    # create and run engine
+    engine = Engine(data, strategy, portfolio)
+    engine.run_backtest()
 
     # calculate metrics
     metrics.calculate_metrics()

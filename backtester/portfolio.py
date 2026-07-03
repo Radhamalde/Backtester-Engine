@@ -8,7 +8,7 @@ class Portfolio():
     def execute_trade(self, signal, price):
         # buy/sell as many as possible shares for now
         if signal == "BUY":
-            shares_to_buy = self.cash//price
+            shares_to_buy = self.cash//price # 2 slashes rounds down to nearest whole
                 self.cash -= shares_to_buy*price
                 self.shares += shares_to_buy
         elif signal == "SELL":

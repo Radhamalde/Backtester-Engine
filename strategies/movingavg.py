@@ -1,10 +1,13 @@
 # Simple Moving Average Strategy.
 
-def movingavgsignal(row): # Takes in data from engine and makes decision
-    if  > movingavg:
-        return "BUY"
-    elif price = x:
-        return "HOLD"
-    else:
-        return "SELL"
-    
+class MovingAvg():
+    def prep_data(self): # To create necesesary rows in the data frame
+
+    def generate_signal(row): # Takes in data from engine and makes decision
+        if row["20SMA"] > row["Close"]:
+            return "BUY"
+        elif price = x:
+            return "HOLD"
+        else:
+            return "SELL"
+        
