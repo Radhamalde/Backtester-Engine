@@ -1,0 +1,1 @@
+# Contains the portfolio of the trader, including the cash, position, etc. 
