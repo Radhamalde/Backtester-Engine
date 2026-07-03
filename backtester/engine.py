@@ -7,13 +7,13 @@ class Engine():
         self.portfolio = portfolio
 
     def run_backtest(self): # runs day by day using the given data and strategy
-        for row in self.data:
-            
-            signal = self.strategy.generate_signal(row)
+        prepped_data = self.strategy.prep_data(self.data) # creates necessary columns for particular strategy
+        for row in prepped_data:
+            signal = self.strategy.generate_signal(row, prepped_data)
 
             self.portfolio.execute_trade(signal, price)
             # calculate necessary items.. rolling averages, days before, etc. 
             # execute given strategy daily by passing these items into the strategy
             # update as necessary
 
-    def calculate
+   # def calculate_items(self, ): for metrics -- finish later

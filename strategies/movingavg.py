@@ -1,13 +1,21 @@
 # Simple Moving Average Strategy.
 
 class MovingAvg():
-    def prep_data(self): # To create necesesary rows in the data frame
+    def __init__(self, short_window, long_window): # Needs to be constructed in main or engine
+        self.short_window = short_window
+        self.long_window = long_window
 
-    def generate_signal(row): # Takes in data from engine and makes decision
-        if row["20SMA"] > row["Close"]:
+    def prep_data(self, data): # To create necesesary columns in the data frame for this strategy
+        data[f"{self.short_window}SMA"] = data["Close"].rolling(self.short_window).mean() 
+        data[f"{self.long_window}SMA"] = data["Close"].rolling(self.long_window).mean() 
+        return data
+
+    def generate_signal(self, index, data): # CHANGE: needs to take all data up to the current date (index). DON'T LET IT SEE ALL DATA (look ahead bias)
+        shortma_name = f"{self.short_window}SMA"
+        longma_name = f"{self.long_window}SMA"
+        if uptodata[index,shortma_name] > uptodata[index,longma_name]:
             return "BUY"
-        elif price = x:
-            return "HOLD"
-        else:
+        elif uptodata[index,shortma_name] < uptodata[index,longma_name]:
             return "SELL"
+        return "HOLD"
         

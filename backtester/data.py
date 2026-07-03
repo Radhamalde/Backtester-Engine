@@ -18,7 +18,5 @@ def load_data(ticker, start_date, end_date):
     initdata = yf.download(ticker, start=start_date, end=end_date) # Takes parameters from main.py
     initdata.to_csv(f"data/{ticker}.csv")  # Save the data to a CSV file to be read by pandas.
     data = pd.read_csv(f"data/{ticker}.csv", index_col='Date', parse_dates=True)  # Read the CSV file into a DataFrame.
-    data["Return"] = data["Close"].pct_change()
-    data["20SMA"] = data["Close"].rolling(20).mean() # Don't keep this once you add more strategies
-    data["3SMA"] = data["Close"].rolling(3).mean() # Make adding data columns up to the strategy. 
+    data["Return"] = data["Close"].pct_change() # Create return column
     return data # Returns the pandas DataFrame for specific stock.
