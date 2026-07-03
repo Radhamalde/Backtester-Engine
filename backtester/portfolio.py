@@ -15,3 +15,6 @@ class Portfolio():
             self.cash += self.shares * price
             self.shares = 0
 
+        print(self.cash)
+        print(self.shares)
+    
