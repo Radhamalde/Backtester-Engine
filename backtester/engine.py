@@ -8,11 +8,6 @@ class Engine():
         self.metrics = metrics
 
     def run_backtest(self): # runs day by day using the given data and strategy
-
-        total_trades = 0
-        total_return = 0
-        profitable_trades = 0
-        max_portfolio_value = init_capital
         # ^all for metrics
 
         prepped_data = self.strategy.prep_data(self.data) # creates necessary columns for particular strategy
@@ -22,9 +17,9 @@ class Engine():
             signal = self.strategy.generate_signal(uptodf) # gets signal from stratgy
             price = prepped_data.iloc[i]["Close"] # get closing price of day for the portfolio
             self.portfolio.execute_trade(signal, price) # updates portfolio
+            # self.portfolio.last_price = price # update last price for metrics -- not needed anymore because keeps track of current and last value
             # calculate necessary items.. rolling averages, days before, etc. 
             # execute given strategy daily by passing these items into the strategy
             # update as necessary
         # call metrics w parameters caluclated during run.
-        self.metrics.print_all_metrics(total_trades, total_return, profitable_trades, max_pv)
    # def calculate_items(self, ): for metrics -- finish later

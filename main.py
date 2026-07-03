@@ -20,10 +20,20 @@ def main():
     strategy = MovingAvg(short_window = 20, long_window = 50)
 
     # construct metrics instance
-    metrics = Metrics(initial_capital=portfolio.cash) # sets initial_capital to portfolio cash before running
+    metrics = Metrics(portfolio) # sets initial_capital to portfolio cash before running
     # create and run engine
-    engine = Engine(data, strategy, portfolio)
+
+    print(f"Initial Capital: ${metrics.get_initial_capital():,.2f}")
+    engine = Engine(data, strategy, portfolio, metrics)
     engine.run_backtest()
+
+    print(f"Total Orders/Transactions: {metrics.get_total_orders()}")
+    print(f"Total Completed Round-Trip Trades: {metrics.get_total_trades()}")
+    print(f"Final Portfolio Value: ${metrics.get_final_portfolio_value():,.2f}")
+    print(f"Total Returns: {metrics.get_total_returns():.2f}%")
+    print(f"Average Return: {metrics.get_avg_return():.2f}%")
+    print(f"Win Rate: {metrics.get_win_rate():.2f}%")
+    print(f"Highest Portfolio Value: ${metrics.get_max_pv():,.2f}")
 
     # calculate metrics
     # metrics.calculate_metrics()
