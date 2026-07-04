@@ -51,10 +51,10 @@ The project is organized into independent components:
          After the engine runs the backtest, main prints the updated metrics.
         
 - The default configuration in main uses:
-        - Ticker: SPY
-        - Start: 2020-01-01, End: 2025-01-01
-        - Moving Average Crossover strategy (Short SMA: 20, Long SMA: 50)
-        - Initial Capital: $ 1000
+    - Ticker: SPY
+    - Start: 2020-01-01, End: 2025-01-01
+    - Moving Average Crossover strategy (Short SMA: 20, Long SMA: 50)
+    - Initial Capital: $ 1000
 
 ## Installation
 1. Clone the repository
