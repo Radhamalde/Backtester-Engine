@@ -49,12 +49,12 @@ The project is organized into independent components:
 - Data – loads historical market data
 - Main - pulls all components together by creating instances of strategy, portfolio, metrics, and data, and passes them into Engine.
          After the engine runs the backtest, main prints the updated metrics.
-
-         The default configuration in main uses:
-            - Ticker: SPY
-            - Start: 2020-01-01, End: 2025-01-01
-            - Moving Average Crossover strategy (Short SMA: 20, Long SMA: 50)
-            - Initial Capital: $ 1000
+        
+- The default configuration in main uses:
+        - Ticker: SPY
+        - Start: 2020-01-01, End: 2025-01-01
+        - Moving Average Crossover strategy (Short SMA: 20, Long SMA: 50)
+        - Initial Capital: $ 1000
 
 ## Installation
 1. Clone the repository
@@ -74,7 +74,7 @@ Run the project with
 
 python main.py
 
-Again, the default configuration uses:
+Default Configuration:
 
 - Ticker: SPY
 - Start: 2020-01-01, End: 2025-01-01
