@@ -18,10 +18,10 @@ class MovingAvg():
     def generate_signal(self, uptodf): # CHANGE: needs to take all data up to the current date (index). DON'T LET IT SEE ALL DATA (look ahead bias)
         shortma_name = f"{self.short_window}SMA"
         longma_name = f"{self.long_window}SMA"
-        date = uptodf.iloc[-1]
-        if date[shortma_name] > date[longma_name]:
+        row = uptodf.iloc[-1]
+        if row[shortma_name] > row[longma_name]:
             return "BUY"
-        elif date[shortma_name] < date[longma_name]:
+        elif row[shortma_name] < row[longma_name]:
             return "SELL"
         return "HOLD"
         

@@ -6,13 +6,12 @@ class Portfolio():
         self.cash = initial_cash
         self.shares = 0
         self.total_orders = 0
-        # self.last_price = 0 # last price of the stock, updated daily in engine
         self.last_pf_value = initial_cash
         self.current_pf_value = initial_cash
         self.max_pf_value = initial_cash
         self.profitable_trades = 0
 
-    def execute_trade(self, signal, price):
+    def execute_trade(self, signal, price): # To add next.. transaction costs
         # buy/sell as many as possible shares for now
         # Later on, record each transaction and its details (price, shares, date, etc.) for metrics and plotting.
         self.last_pf_value = self.current_pf_value # updates to last day (review logic for first day- fixed

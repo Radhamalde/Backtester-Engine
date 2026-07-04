@@ -9,9 +9,9 @@ from strategies.movingavg import MovingAvg
 
 def main():
     # load data
-    data = load_data('NVDA', '2023-01-01', '2025-12-01') 
-    print(data.head())
-    print(data.columns)
+    data = load_data('SPY', '2020-01-01', '2025-01-01') 
+    # print(data.head()) just for testing
+    # print(data.columns)
 
     # construct portfolio
     portfolio = Portfolio(initial_cash=1000)
@@ -23,10 +23,11 @@ def main():
     metrics = Metrics(portfolio) # sets initial_capital to portfolio cash before running
     # create and run engine
 
-    print(f"Initial Capital: ${metrics.get_initial_capital():,.2f}")
     engine = Engine(data, strategy, portfolio, metrics)
     engine.run_backtest()
 
+    # print metrics
+    print(f"Initial Capital: ${metrics.get_initial_capital():,.2f}")
     print(f"Total Orders/Transactions: {metrics.get_total_orders()}")
     print(f"Total Completed Round-Trip Trades: {metrics.get_total_trades()}")
     print(f"Final Portfolio Value: ${metrics.get_final_portfolio_value():,.2f}")
@@ -35,8 +36,6 @@ def main():
     print(f"Win Rate: {metrics.get_win_rate():.2f}%")
     print(f"Highest Portfolio Value: ${metrics.get_max_pv():,.2f}")
 
-    # calculate metrics
-    # metrics.calculate_metrics()
 
 if __name__ == "__main__":
     main()

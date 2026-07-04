@@ -4,8 +4,8 @@ class Metrics():
     def __init__(self, portfolio):
         self.portfolio = portfolio
 
-    def get_initial_capital(self): # get before engine run in main (probably cleaner way to do this to always get initial captial value)
-        return self.portfolio.initial_cash # thjis is wrong and messing up total and avg returns !!!!
+    def get_initial_capital(self): 
+        return self.portfolio.initial_cash 
 
     def get_total_trades(self): # count during engine run in portfolio
         return self.portfolio.total_orders // 2 # each round trip trade has 2 orders
