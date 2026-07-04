@@ -38,6 +38,7 @@ Backtester/
         ├── __init__.py
         ├── base.py
         └── movingavg.py
+```
 
 The project is organized into independent components:
 
@@ -54,20 +55,19 @@ The project is organized into independent components:
             - Start: 2020-01-01, End: 2025-01-01
             - Moving Average Crossover strategy (Short SMA: 20, Long SMA: 50)
             - Initial Capital: $ 1000
-```
 
 ## Installation
 1. Clone the repository
 
-git clone git@github.com:Radhamalde/Backtester-Engine.git
+    git clone git@github.com:Radhamalde/Backtester-Engine.git
 
 2. Navigate to the project
 
-cd backtester
+    cd backtester
 
 3. Install dependencies
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ## Running
 Run the project with
@@ -75,17 +75,18 @@ Run the project with
 python main.py
 
 Again, the default configuration uses:
-            - Ticker: SPY
-            - Start: 2020-01-01, End: 2025-01-01
-            - Moving Average Crossover strategy (Short SMA: 20, Long SMA: 50)
-            - Initial Capital: $ 1000
 
-        But these can be changed in main.
+- Ticker: SPY
+- Start: 2020-01-01, End: 2025-01-01
+- Moving Average Crossover strategy (Short SMA: 20, Long SMA: 50)
+- Initial Capital: $ 1000
+
+But these can be changed in main.
 
 ## Example Output
-```text
 (For 'NVDA', '2023-01-01', '2025-12-01', initial cash: 1000)
 
+```text
 Initial Capital: $1,000.00
 Total Orders/Transactions: 7
 Total Completed Round-Trip Trades: 3
