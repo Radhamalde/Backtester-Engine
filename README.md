@@ -3,7 +3,7 @@
 ## Description
 A modular backtesting engine written in Python for evaluating algorithmic trading strategies on historical stock market data.
 
-The engine simulates portfolio performance by executing trading signals generated from customizable strategies, while tracking performance metrics such as portfolio value, returns, trade statistics, and drawdowns.
+The engine simulates portfolio performance by executing trading signals generated from customizable strategies, while tracking performance metrics such as portfolio value, returns, trade statistics, and win rates.
 
 The project is designed with an object-oriented architecture so new strategies can be added without modifying the core backtesting engine.
 
