@@ -1,5 +1,6 @@
 # Backtesting Engine
-
+## Author
+Radha Malde, University of Michigan Student
 ## Description
 A modular backtesting engine written in Python for evaluating algorithmic trading strategies on historical stock market data.
 
