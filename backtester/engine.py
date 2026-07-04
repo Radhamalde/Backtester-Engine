@@ -11,7 +11,7 @@ class Engine():
 
         prepped_data = self.strategy.prep_data(self.data) # creates necessary columns for particular strategy
         for i in range(len(prepped_data)): 
-            uptodf = prepped_data.iloc[:i+1,:] # selects rows up to row+1, and all columns
+            uptodf = prepped_data.iloc[:i+1,:] # selects rows up to row+1, and all columns FIX OPTIMIZATION (dont need to send copy each day)
             
             # Signal uses yesterday's SMA values, then executes at today's open.
             signal = self.strategy.generate_signal(uptodf) # gets signal from stratgy
